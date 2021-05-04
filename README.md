@@ -32,3 +32,6 @@ python3 main.py --model_name a2c --policy_name MlpPolicy --initial_balance 10000
 Example on running A2C with the same configuration WITHOUT reddit sentiment:
 
 python3 main.py --model_name a2c --policy_name MlpPolicy --initial_balance 10000 --timesteps 1000000
+
+For basic structure and layouts, we drew inspiration from FinRL: https://github.com/AI4Finance-LLC/FinRL
+However, the real heavy lifting is done with the algorithms from stable_baselines: https://github.com/hill-a/stable-baselines
