@@ -43,7 +43,11 @@ Command line arguments (can also see these in main.py):
 
 ==================================================
 
+a2c_MlpPolicy.zip -- Example pre-trained model file. Can be loaded and tested on.
+
 config.py --  Configuration file. Dates, tickers, reddit API settings are stored here, along with any constants needed for the code.
+
+csv_files/ -- Directory with CSV files which are used in generating an example plot from plot.py
 
 get_reddit_data.py -- An example on extracting reddit data from any subreddit based on dates grabbed from stock extraction. Will save data as a csv.
 
