@@ -1,11 +1,53 @@
 # CSCE689FinalProject
 Final project for CSCE 689: Reinforcement Learning
 
+==================================================
+
+Command line arguments (can also see these in main.py):
+
+--model_name: a2c, ddpg, td3, ppo, or sac (the RL algorithm to run)
+
+--policy_name: MlpPolicy or MlpLstmPolicy (whether or not to use LSTM for the policy updates)
+
+--timesteps: Number of timesteps to train for, integer
+
+--from_saved: Whether or not to use pre-trained model (flag)
+
+--saved_path: If using pre-trained model, specify path to its .zip file
+
+--test: Whether or not to test or train the model
+
+--tickers: Which tickers to use. Defaults to DOW, but you can do something like: --tickers AAPL FB MSFT
+
+--initial_balance: Starting balance for the agent to trade with
+
+--start_date: Training start date
+
+--end_date: Training end date
+
+--start_date_test: Testing start date
+
+--end_date_test: Testing end date
+
+--interval: Frequency of data collection, either 1d or 1h
+
+--use_reddit: Whether or not to use reddit sentiment data with state space
+
+--reddit_path: Path to reddit training data. Must match up with stock information in terms of dates. IF NOT SPECIFIED, WILL MAKE REQUESTS OUT TO PUSHSHIFT.
+
+--reddit_path_test: Same as above, but for testing data.
+
+--subreddit: Which subreddit to use for sentiment.
+
+--n_lstm: If using MlpLstmPolicy, how many lstm timesteps to use
+
+==================================================
+
 config.py --  Configuration file. Dates, tickers, reddit API settings are stored here, along with any constants needed for the code.
 
 get_reddit_data.py -- An example on extracting reddit data from any subreddit based on dates grabbed from stock extraction. Will save data as a csv.
 
-main.py -- Runs the program. Command line arguments covered at the bottom.
+main.py -- Runs the program.
 
 models.py -- Essentially a wrapper class to train and test with models from the stable_baselines library.
 
@@ -24,6 +66,8 @@ trading_env.py -- Custom OpenAI Gym environment created for stock trading.
 utils.py -- Used to combine the Reddit sentiment data with the stock data.
 
 wsbot_2.py -- WallStreetBot class. Called from main.py to essentially do the entire training and testing process.
+
+==================================================
 
 Example on running A2C with 1,000,000 timesteps with MLP policy WITH reddit sentiment and an initial balance of 10000 dollars:
 
