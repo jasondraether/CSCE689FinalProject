@@ -9,6 +9,7 @@ import numpy as np
 import time
 import gym
 import pdb
+import os
 
 import config
 
@@ -100,7 +101,7 @@ class DRLAgent:
     def train_model(self, model, save_path=None, total_timesteps=5000):
         model = model.learn(total_timesteps=total_timesteps)
         if save_path != None:
-            model.save(save_path)
+            model.save(os.path.join(save_path,f'{self.model_name}_{self.policy}.zip'))
         return model
 
     def load_model(self, model_name, model_path):
