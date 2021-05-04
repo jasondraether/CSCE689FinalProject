@@ -95,8 +95,7 @@ class WallStreetBot(object):
             env_test = TradingEnv(test_info, len(self.tickers), 3,  self.initial_balance, test=True)
         
         # Initialize agent, get model, and train model
-        agent = DRLAgent(env=env_train,
-                    save_dir=self.output_model_dir)
+        agent = DRLAgent(env=env_train)
 
         print("=========================================")
         print(f"Train the agent from {self.start_date} to {self.end_date}")
